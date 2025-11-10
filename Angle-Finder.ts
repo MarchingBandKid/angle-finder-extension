@@ -1,14 +1,14 @@
-
 /**
 * Use this file to define custom functions and blocks.
 * Read more at https://arcade.makecode.com/blocks/custom
 */
 
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
+// Define an enum for the dropdown options: Degrees or Radians
+enum AngleUnit {
+    //% block="Degrees"
+    Degrees,
+    //% block="Radians"
+    Radians
 }
 
 /**
@@ -18,21 +18,36 @@ enum MyEnum {
 //% color="#ff0000" icon="\uf065"
 namespace Angle_Finder {
     /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
+     * Calculates the angle between two points in degrees.
+     * @param y2 the y coordinate of the second point
+     * @param y1 the y coordinate of the first point
+     * @param x2 the x coordinate of the second point
+     * @param x1 the x coordinate of the first point
      */
-    //% block
-    export function Find_Angle(y2: number, y1: number, x2: number, x1: number) {
+    //% block="find angle y2 $y2 y1 $y1 x2 $x2 x1 $x1"
+    //% inlineInputMode="inline"
+    export function Find_Angle(y2: number, y1: number, x2: number, x1: number): number {
         // Add code here
-        return Math.atan2(y2 - y1, x2 - x1) * (180 / 3.14159)
+        return Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
     }
 
     /**
-     * TODO: describe your function here
-     * @param value describe value here, eg: 5
+     * Calculates the angle between two points and returns it in the specified unit.
+     * @param y2 the y coordinate of the second point
+     * @param y1 the y coordinate of the first point
+     * @param x2 the x coordinate of the second point
+     * @param x1 the x coordinate of the first point
+     * @param unit the desired unit for the angle (Degrees or Radians)
      */
-    //% block
-   
+    //% block="find angle y2 $y2 y1 $y1 x2 $x2 x1 $x1 as $unit"
+    //% inlineInputMode="inline"
+    export function Find_Angle_With_Unit(y2: number, y1: number, x2: number, x1: number, unit: AngleUnit): number {
+        const angleRadians = Math.atan2(y2 - y1, x2 - x1);
+
+        if (unit === AngleUnit.Degrees) {
+            return angleRadians * (180 / Math.PI);
+        } else {
+            return angleRadians;
+        }
+    }
 }
