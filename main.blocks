@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables></variables></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="E^jRS8d]`MmbsS7u5Bz5">mySprite</variable><variable type="KIND_SpriteKind" id="Aj8~tt#p:_jf*H@oA%`P">Player</variable><variable type="KIND_SpriteKind" id="9-B5szm$17V6whf)Gbpk">Projectile</variable><variable type="KIND_SpriteKind" id="#X3V%0Mn#1KhuQq]nQAj">Food</variable><variable type="KIND_SpriteKind" id="(9fa37-1XBlsEROkFf#t">Enemy</variable></variables></xml>

@@ -15,7 +15,7 @@ enum AngleUnit {
  * Angle Finder
  */
 //% weight=50
-//% color="#ff0000" icon="\uf065"
+//% color="#ff0000" icon="\uf200"
 namespace Angle_Finder {
     /**
      * Calculates the angle between two points in degrees.
